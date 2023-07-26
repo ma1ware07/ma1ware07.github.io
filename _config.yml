@@ -1,1 +1,5 @@
-theme: jekyll-theme-modernist
+title: CyberSecurity Blog
+description: My descent into cybersecurity madness! 
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-hacker
