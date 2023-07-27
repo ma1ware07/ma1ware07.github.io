@@ -15,18 +15,6 @@ The box was pretty old and vulnerable to MS14-068 which we exploited to get a ro
 
 ---
 
-## Nmap Summary
-| Port | Software    | Version                                 | Status  |
-| ---- | ----------- | --------------------------------------- | ------- |
-| 53   | domain      | Microsoft DNS 6.1.7601                              | open    |
-| 88   | kerberos        | Microsoft Windows Kerberos                      | open    |
-| 445  | smb-sec | Windows Server 2008 R2 Standard 7601 Service Pack 1 microsoft-ds            | open    |
-| 389  | ldap        | Microsoft Windows Active Directory LDAP | open    |
-| 1337  | http        | Microsoft IIS | open    |
-| 8080 | http        | Microsoft IIS | open    |
-| 1433 | mssql        | Microsoft SQL Server| open    |
-| 50255 | mssql        | Microsoft SQL Server| open    |
-
 ## Information Recon
 
 Ports tcp open in nmap format
