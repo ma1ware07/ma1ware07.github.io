@@ -1,7 +1,6 @@
 # Welcome to my CyberSecurity Blog
 
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/images/favicon.ico"  | absolute_url }}">
 </head>
 
 <body>
