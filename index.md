@@ -1,8 +1,5 @@
 # Welcome to my CyberSecurity Blog
 
-<head>
-  <meta name="google-site-verification" content="42n3AA2IgDxO8o4pe3uUfhhTOVxKJhs4OsDTbEtJNqc" />
-</head>
 
 <body>
 
