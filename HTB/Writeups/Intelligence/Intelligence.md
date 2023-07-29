@@ -1,18 +1,3 @@
-<head>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-</head>
----
-tags:
-  - windows 
-  - medium
-  - silver ticket
-  - ad
-  - smb
-  - spraying
-  - kerberos
-  - gmsa
----
-
 # Introduction
 
 Intelligence was an medium-level box that showcased realistic AD-attacks. 

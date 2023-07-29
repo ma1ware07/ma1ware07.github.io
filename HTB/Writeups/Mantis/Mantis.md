@@ -1,17 +1,4 @@
-<head>
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-</head>
-
----
-tags:
-  - windows 
-  - hard
-  - bloodhound
-  - goldenPac
-  - MSSQL
-  - dbeaver
-  - kerberos
----
+# Introdution
 
 Mantis was an interesting box with a somewhat realistic chain of attack, it started off with two webservers both IIS one had Orchard CMS the other had a secret directory which contained some credentials which you could use to access MSSQL db which you then used to find the plaintext credentials for a user james.
 The box was pretty old and vulnerable to MS14-068 which we exploited to get a root-shel.
