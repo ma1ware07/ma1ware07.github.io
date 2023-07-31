@@ -208,7 +208,9 @@ In the C drive there is a folder SQLServer in which a log file is present which 
 
 We can proceed to login as him using evil-winrm
 
-!["Evil winrm login"](assets/evil-winrm2.png)
+```bash
+$ evil-winrm -i sequel.htb -u 'ryan.cooper' -p 'NuclearMosquito3' 
+```
 
 Running a bloodhound ingestor
 !["Running remote bloddhound ingestor"](assets/bh-ingestor.png)
