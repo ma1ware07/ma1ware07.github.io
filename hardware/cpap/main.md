@@ -31,8 +31,8 @@ Personally for me the instructions provided on the airbreak.dev website did not 
 
 Some videos that I found helpful are: (you do not need to follow them till the end just till we get access to the circuit board)
 
-!["How to Service and clean Resmed airsense"](https://www.youtube.com/watch?v=g9ipWYxl6pY)
-!["ResMed Motor Replacement Guide"](https://www.youtube.com/watch?v=vXoSxPP7shw)
+https://www.youtube.com/watch?v=g9ipWYxl6pY
+https://www.youtube.com/watch?v=vXoSxPP7shw
 
 Make sure that you are very careful with the plastic hinges at the end. They can break if not popped very carefully. Leave the circuit board as is, do not de-attach it.
 
