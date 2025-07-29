@@ -98,11 +98,11 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://github.com/ma1ware07/ma1ware07.github.io/favicon.ico
+avatar: https://raw.githubusercontent.com/ma1ware07/ma1ware07.github.io/refs/heads/main/favicon.ico
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: https://github.com/ma1ware07/ma1ware07.github.io/favicon.ico # string, local or CORS resources
+social_preview_image: https://raw.githubusercontent.com/ma1ware07/ma1ware07.github.io/refs/heads/main/favicon.ico # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
