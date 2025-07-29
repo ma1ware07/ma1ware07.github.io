@@ -1,0 +1,8 @@
+title: CyberSecurity Blog
+description: My descent into cybersecurity madness! 
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-hacker
+google_site_verification: 42n3AA2IgDxO8o4pe3uUfhhTOVxKJhs4OsDTbEtJNqc
+plugins:
+  - jekyll-seo-tag
