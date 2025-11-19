@@ -152,7 +152,6 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 url: https://ma1ware07.github.io
-plugins:
 
 # ------------ The following options are not recommended to be modified ------------------
 
