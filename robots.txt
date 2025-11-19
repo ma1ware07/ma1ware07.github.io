@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://ma1ware07.github.io/sitemap.xml
+Sitemap: https://ma1ware07.github.io/asd.xml
